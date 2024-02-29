@@ -1,0 +1,34 @@
+pipeline{
+    agent any
+    stages{
+        stage("Pull Sourceode From GitHub"){
+            steps{
+                git 'https://github.com/Github_ID/docker1.git'
+            }
+        }
+        stage("Build Dockerfile Into DockerImage"){
+            steps{
+                sh 'docker image build -t $JOB_NAME.$BUILD_ID .'
+                sh 'docker image tag $JOB_NAME.$BUILD_ID rishabh1004/$JOB_NAME.$BUILD_ID'
+                sh 'docker image tag Docker_ID/$JOB_NAME.$BUILD_ID rishabh1004/$JOB_NAME:latest '
+            }    
+        }
+        stage("Push DockerImage To DockerHub"){
+            steps{
+                withCredentials([string(credentialsId: 'Docker_ID', variable: 'dockerhubpassword')]) {
+    // some block
+    sh 'docker login -u Docker_ID -p ${dockerhubpassword}'
+    sh 'docker image push Docker_ID/$JOB_NAME:latest'
+}
+            }
+        }
+        stage("Deployment"){
+            steps{
+                sshagent(['dockerhostpassword']) {
+    // some block
+    sh 'docker container run -p 8002:80 -d Docker_ID/$JOB_NAME:latest'
+}        
+            }
+        }
+    }
+}
