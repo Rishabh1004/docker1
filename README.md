@@ -1,4 +1,4 @@
-#Continuous Integration and Delivery with Jenkins and Docker
+# Continuous Integration and Delivery with Jenkins and Docker
 
 Create EC2 
 ![Screenshot (207)](https://github.com/Rishabh1004/docker1/assets/102922226/b808be7a-7818-4cac-a945-975f671c53e2)
@@ -18,5 +18,12 @@ sudo yum install fontconfig java-17-openjdk
 sudo yum install jenkins
 
 sudo systemctl daemon-reload
+
+# Install Docker in EC2
+sudo yum update -y
+sudo yum install docker -y
+sudo systemctl start docker
+# start jenkins At port 8080
+public_ip:8080
 
 ![Screenshot (206)](https://github.com/Rishabh1004/docker1/assets/102922226/31718824-7798-4099-bfdc-438f1ce18f94)
