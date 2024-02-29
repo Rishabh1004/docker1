@@ -1,4 +1,4 @@
-CI/CD THROUGHT JENKINS AND DOCKER 
+#Continuous Integration and Delivery with Jenkins and Docker
 
 Create EC2 
 ![Screenshot (207)](https://github.com/Rishabh1004/docker1/assets/102922226/b808be7a-7818-4cac-a945-975f671c53e2)
