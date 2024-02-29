@@ -48,6 +48,9 @@ ls
 
 cat id_rsa
 
+copy code
+
+
 # CREATE PIPELINE
 
 ![Screenshot (208)](https://github.com/Rishabh1004/docker1/assets/102922226/3139676c-a23f-428e-b531-82c9d2948999)
@@ -68,13 +71,39 @@ Enter Secret
 
 ![Screenshot (210)](https://github.com/Rishabh1004/docker1/assets/102922226/31732051-50b4-4205-9b38-50d28208ef05)
 
+# CREATE REPO
+
+mkdir /dev
+
+cd /dev
+
 # CREATE DOCKERFILE
+
+vi dockerfile
 
 ![Screenshot (211)](https://github.com/Rishabh1004/docker1/assets/102922226/b4d7e326-0b0b-4d90-8a6a-30b9a15097a4)
 
-Push to Github
-
 # GIT COMMAND
+
+git init
+
+git --help
+
+git add file_name
+
+git commit -m "    "
+
+git push -u origin main
+
+# GIVE SSH AUTH
+
+ sudo vi /etc/ssh/sshd_config
+
+ ![Screenshot (212)](https://github.com/Rishabh1004/docker1/assets/102922226/c7fe6595-134e-4e20-854b-c9bb8e608e4d)
+
+ PermitRootLogin yes
+
+PasswordAuthentication yes
 
 
 
